@@ -1,0 +1,13 @@
+[ldap-servers]
+ldap.se.ampr.org needs_certificate=false
+
+[shibboleth-idps]
+ldap.se.ampr.org needs_certificate=false min_jvm_size=1024m
+
+[identity-all:children]
+ldap-servers
+shibboleth-idps
+
+[DebianOS-servers:children]
+identity-all
+############################ END #########################
